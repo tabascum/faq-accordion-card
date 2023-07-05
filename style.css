@@ -1,39 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 @import url("base.css");
-@import url("colors.css");
 
 main {
   height: 65vh;
   width: 60rem;
-  background: #fff url("./images/bg-pattern-desktop.svg") no-repeat -35rem 65%;
+  background: #fff url("./images/bg-pattern-desktop.svg") no-repeat -35rem 70%;
   box-shadow: 0.5rem 0.5rem 1.5rem var(--dark-grayish-blue);
   border-radius: 1.5rem;
   display: grid;
-  grid-template-columns: 25rem 1fr;
+  grid-template-columns: 26rem 1fr;
 }
 
 .background {
   display: grid;
   place-items: center;
-  position: relative;
+  background: url("./images/illustration-woman-online-desktop.svg") no-repeat -4.3rem
+    44%;
 }
 
 picture #woman {
   position: absolute;
   margin-inline-start: -17rem;
-  z-index: 1;
+  z-index: 4;
 }
 
 picture #box {
   position: relative;
-  margin-inline-start: -18.2rem;
-  margin-block-end: 3.5rem;
-  z-index: 2;
+  margin-inline-start: -18.6rem;
+  margin-block-start: 5rem;
+  z-index: 1;
 }
 
 .faq {
   width: 32rem;
-  padding: 5rem 4rem;
+  padding: 5rem 3rem;
 }
 
 .faq h1 {
