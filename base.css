@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(var(--soft-violet) 10%, var(--soft-blue) 80%);
+  display: grid;
+  place-items: center;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: var(--font-size);
+  line-height: 1.5;
+}
