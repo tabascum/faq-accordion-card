@@ -1,24 +1,22 @@
-const question = document.querySelectorAll("#faq-question p");
-const arrows = document.querySelectorAll("#arrow");
-const answers = document.querySelectorAll("#faq-answer");
+const question = document.querySelectorAll("#faq-question");
+let i;
 
-question.entries();
+for (i = 0; i < question.length; i++) {
+  question[i].addEventListener("click", function () {
+    this.classList.add("active");
 
-question.forEach((item) => {
-  item.addEventListener("click", () => {
-    if (item.parentNode.classList.contains("active")) {
-      item.parentNode.classList.toggle("active");
+    let answer = this.nextElementSibling;
+    let arrow = this.querySelectorAll("#arrow")[0];
+
+    if (answer.style.display === "block") {
+      answer.style.display = "none";
+      arrow.classList.remove("arrow-rotate");
     } else {
-      item.parentNode.classList.remove("active");
-      item.parentNode.classList.add("active");
-      console.log(item);
+      answer.style.display = "block";
+      arrow.classList.add("arrow-rotate");
     }
   });
-});
 
-arrows.forEach((item) => {
-  item.addEventListener("click", () => {
-    console.log("click");
-    item.setAttribute("transform", "rotate(-180deg)");
-  });
-});
+  const allQuestion = document.querySelectorAll("#faq-question");
+  const allArrow = document.querySelectorAll("#arrow");
+}
