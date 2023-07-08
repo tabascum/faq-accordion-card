@@ -2,15 +2,15 @@
 @import url("base.css");
 
 main {
-  max-height: 65vh;
-  width: 58rem;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(2, 1fr);
   background: #fff url("./images/bg-pattern-desktop.svg") no-repeat -35rem 70%;
   box-shadow: 0 1rem 1.2rem var(--dark-grayish-blue);
   -webkit-box-shadow: 0 1rem 1.2rem var(--dark-grayish-blue);
   border-radius: 1.5rem;
-  display: grid;
-  place-content: center;
-  grid-template-columns: repeat(2, 1fr);
+  width: 58rem;
+  font-size: 14px;
 }
 
 .background {
@@ -34,19 +34,18 @@ picture #box {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 45rem;
+  align-items: flex-start;
 }
 
-.faq div {
-  width: 100%;
-  padding: 1rem 6rem 1rem 0;
+.faq > div {
+  margin-block: 3rem;
   color: var(--dark-grayish-blue);
+  justify-content: flex-start;
 }
 
 .faq h1 {
   font-size: 2rem;
-  margin-block-end: 1rem;
+  margin-block: 1rem;
 }
 
 .faq ul {
@@ -54,34 +53,28 @@ picture #box {
   list-style: none;
 }
 
-.faq ul li {
+.faq ul > li {
   border-block-end: 1px solid var(--light-grayish-blue);
 }
 
-#faq-question {
+.faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
   font-size: 1rem;
   transition: all 0.4s;
+  gap: 4rem;
 }
 
-#faq-question:hover {
+.faq-question:hover {
   color: var(--soft-red);
   cursor: pointer;
 }
 
-#faq-question > #arrow {
-  width: 0.7rem;
-}
-
-#faq-answer p {
-  margin-block-end: 0.5rem;
-}
-
-.arrow-rotate {
-  transform: translate(-180deg);
+.faq-answer p {
+  max-width: 350px;
+  margin-block-end: 1rem;
 }
 
 .hidden {
@@ -89,10 +82,15 @@ picture #box {
 }
 
 .active {
+  display: flex;
   font-weight: 700;
 }
 
-.attribution {
+.active > img {
+  transform-y: rotate(-180deg);
+}
+
+/* .attribution {
   display: flex;
   justify-content: center;
   font-size: 11px;
@@ -101,17 +99,18 @@ picture #box {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
+} */
 
 @media (max-width: 1020px) {
   main {
-    /*     height: 35rem;
-    width: 20rem; */
+    height: 30rem;
+    width: 20rem;
     display: grid;
     place-content: center;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
     background: #fff url("./images/bg-pattern-mobile.svg") no-repeat 50% 0rem;
+    position: relative;
   }
 
   .background {
@@ -119,10 +118,12 @@ picture #box {
   }
 
   .mobile-bg {
+    position: absolute;
     display: grid;
-    margin-inline-start: 21.75rem;
-    margin-block-start: 13.5rem;
-    width: 25%;
+    margin-block-start: -7rem;
+    margin-inline-start: 2.5rem;
+    width: 75%;
+    z-index: 1;
   }
 
   #box {
@@ -130,16 +131,20 @@ picture #box {
   }
 
   .faq {
-    max-height: -40%;
-    font-size: 0.8rem;
     margin-inline: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .faq h1 {
+    text-align: center;
   }
 
   .faq div {
-    width: 80%;
   }
 
-  #faq-question {
-    padding: 0.5rem 0;
+  .faq-question {
+    font-size: 0.8rem;
+    padding: 0.7rem 0;
+    gap: 0.5rem;
   }
 }

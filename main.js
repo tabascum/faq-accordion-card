@@ -1,4 +1,4 @@
-const question = document.querySelectorAll("#faq-question");
+const question = document.querySelectorAll(".faq-question");
 let i;
 
 for (i = 0; i < question.length; i++) {
@@ -10,6 +10,7 @@ for (i = 0; i < question.length; i++) {
       this.classList.remove("active");
     } else {
       answer.style.display = "block";
+      answer.style;
       this.classList.add("active");
     }
   });
