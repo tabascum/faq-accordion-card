@@ -45,12 +45,13 @@ picture #box {
 
 .faq h1 {
   font-size: 2rem;
-  margin-block: 1rem;
+  margin-block-end: 1.5rem;
 }
 
 .faq ul {
   line-height: 1.5;
   list-style: none;
+  height: 22rem;
 }
 
 .faq ul > li {
@@ -142,9 +143,11 @@ picture #box {
 
   .faq h1 {
     text-align: center;
+    margin-block-end: 0.5rem;
   }
 
-  .faq div {
+  .faq ul {
+    height: 17rem;
   }
 
   .faq-question {
