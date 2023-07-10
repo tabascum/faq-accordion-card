@@ -72,22 +72,27 @@ picture #box {
   cursor: pointer;
 }
 
+.faq-question.active {
+  display: flex;
+  font-weight: 700;
+  transition: all 0.5s ease;
+}
+
+.faq-question.active > img {
+  transform: rotateX(-180deg);
+}
+
+.faq-answer {
+  display: flex;
+}
+
 .faq-answer p {
   max-width: 350px;
   margin-block-end: 1rem;
 }
 
-.hidden {
+.faq-answer.hidden {
   display: none;
-}
-
-.active {
-  display: flex;
-  font-weight: 700;
-}
-
-.active > img {
-  transform-y: rotate(-180deg);
 }
 
 /* .attribution {

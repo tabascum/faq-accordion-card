@@ -1,17 +1,25 @@
-const question = document.querySelectorAll(".faq-question");
-let i;
+const questions = document.querySelectorAll(".faq-question");
 
-for (i = 0; i < question.length; i++) {
-  question[i].addEventListener("click", function () {
-    let answer = this.nextElementSibling;
+questions.forEach((question) => {
+  question.addEventListener("click", () => {
+    activeRemoval();
 
-    if (answer.style.display === "block") {
-      answer.style.display = "none";
-      this.classList.remove("active");
-    } else {
-      answer.style.display = "block";
-      answer.style;
-      this.classList.add("active");
-    }
+    question.classList.add("active");
+
+    displayAnswer(question);
   });
+});
+
+function displayAnswer(question) {
+  const answer = question.nextElementSibling;
+  answer.classList.remove("hidden");
+}
+
+function activeRemoval() {
+  const selectedQuestion = document.querySelector(".faq-question.active");
+  if (selectedQuestion) {
+    selectedQuestion.classList.remove("active");
+    const answer = selectedQuestion.nextElementSibling;
+    answer.classList.add("hidden");
+  }
 }
